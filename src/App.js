@@ -16,8 +16,9 @@ function App() {
 						<Switch>
 							<Route path="/" exact component={ListEmployeeComponent}></Route>
 							<Route path="/employees" component={ListEmployeeComponent}></Route>
-							<Route path="/add_employee" component={CreateEmployeeComponent}></Route>
-							<Route path="/update_employee/:id" component={UpdateEmployeeComponent}></Route>
+							{/* Step 1 */}
+							<Route path="/add_employee/:id" component={CreateEmployeeComponent}></Route>
+							{/* <Route path="/update_employee/:id" component={UpdateEmployeeComponent}></Route> */}
 						</Switch>
 					</div>
 					<FooterComponent />
