@@ -34,6 +34,10 @@ class ListEmployeeComponent extends Component {
 		})
 	}
 
+	viewEmployee(id){
+		this.props.history.push(`/view_employee/${id}`);
+	}
+
 	render() {
 		return (
 			<div>
@@ -61,6 +65,7 @@ class ListEmployeeComponent extends Component {
 									<td>
 										<button className="btn btn-info" onClick={() => this.editEmployee(employee.id)}>Update</button>
 										<button style={{marginLeft:"10px"}} className="btn btn-danger" onClick={() => this.deleteEmployee(employee.id)}>Delete</button>
+										<button style={{marginLeft:"10px"}} className="btn btn-info" onClick={() => this.viewEmployee(employee.id)}>View</button>
 									</td>
 								</tr>
 							))}
