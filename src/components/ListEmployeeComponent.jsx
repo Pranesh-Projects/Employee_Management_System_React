@@ -21,7 +21,6 @@ class ListEmployeeComponent extends Component {
     }
 
     addEmployee() {
-        // step 6  -  added '-1' for the url
         this.props.history.push("/add_employee");
     }
 

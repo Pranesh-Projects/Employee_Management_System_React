@@ -35,36 +35,14 @@ class UpdateEmployeeComponent extends Component {
         });
     };
 
-    componentDidMount() {
-        // EmployeeService.getEmployeeById(this.state.id).then((res) => {
-        //     console.log(res.data);
-        // let employee = res.data;
-        // console.log(employee);
-        // this.setState({firstName: employee.firstName,
-        //     lastName: employee.lastName,
-        //     emailId: employee.emailId
-        // });
-        // });
-    }
-
     updateEmployee = (e) => {
         e.preventDefault();
-        // let employee = {
-        // 	firstName: this.state.firstName,
-        // 	lastName: this.state.lastName,
-        // 	emailId: this.state.emailId,
-        // };
-        // console.log("employee =>" + JSON.stringify(employee));
-        // console.log("id =>" + JSON.stringify(this.state.id));
         this.setState({
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             emailId: this.state.emailId,
         });
-        // EmployeeService.updateEmployee(employee, this.state.id).then(res => {
         this.props.history.push("/employees");
-        // })
-
     };
 
     cancel() {

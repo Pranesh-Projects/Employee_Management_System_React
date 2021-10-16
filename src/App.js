@@ -11,13 +11,11 @@ function App() {
     return (
         <div>
             <Router>
-                {/* <div className="container">  -  it puts like a box */}
                 <HeaderComponent/>
                 <div className="container">
                     <Switch>
                         <Route path="/" exact component={ListEmployeeComponent}></Route>
                         <Route path="/employees" component={ListEmployeeComponent}></Route>
-                        {/* Step 1 */}
                         <Route path="/add_employee" component={CreateEmployeeComponent}></Route>
                         <Route path="/employee/:id/:first/:last/:mail" component={ViewEmployeeComponent}></Route>
                         <Route path="/edit_employee/:id/:first/:last/:mail" component={UpdateEmployeeComponent}></Route>

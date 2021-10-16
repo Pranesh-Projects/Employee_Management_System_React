@@ -5,8 +5,6 @@ class CreateEmployeeComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // initializing value for all 3 as '' empty string
-            // Step 2
             id: this.props.match.params.id,
             firstName: "",
             lastName: "",
@@ -18,26 +16,6 @@ class CreateEmployeeComponent extends Component {
         this.changeEmailIdHandler = this.changeEmailIdHandler.bind(this);
         this.saveOrUpdateEmployee = this.saveOrUpdateEmployee.bind(this); // 1st method to bind , 2nd line- 83
     }
-
-    // step 3  -  get 'employee' object by 'id'
-    // componentDidMount() {
-    // 	// step 4  -  id = -1 => create, id != -1 => update
-    // 	if (this.state.id === '_add') {
-    // 		return
-    // 	}
-    // 	else {
-    // 		EmployeeService.getEmployeeById(this.state.id).then((res) => {
-    // 			console.log(res.data);
-    // 			let employee = res.data;
-    // 			console.log(employee);
-    // 			this.setState({
-    // 				firstName: employee.firstName,
-    // 				lastName: employee.lastName,
-    // 				emailId: employee.emailId
-    // 			});
-    // 		});
-    // 	}
-    // }
 
     changeFirstNameHandler = (event) => {
         this.setState({
@@ -62,32 +40,17 @@ class CreateEmployeeComponent extends Component {
         let employee = {firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId,};
         console.log('employee =>' + JSON.stringify(employee));
 
-        // step 5  -  id = -1 => createEmployee, id != -1 => updateEmployee
-        // if (this.state.id === '_add') {
         EmployeeService.createEmployee(employee).then(res => {
             this.props.history.push("/employees");
         })
-        // }
-        // else {
-        // 	EmployeeService.updateEmployee(employee, this.state.id).then(res => {
-        // 		this.props.history.push("/employees");
-        // 	})
-        // }
-
     }
 
     cancel() {
         this.props.history.push("/employees");
     }
 
-    // step 7
     getTitle() {
-        // if (this.state.id === '_add') {
         return <h3 className="text-center">Add Employee</h3>
-        // }
-        // else {
-        // 	return <h3 className="text-center">Update Employee</h3>
-        // }
     }
 
     render() {
@@ -96,7 +59,6 @@ class CreateEmployeeComponent extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
-                            {/*<h3 className="text-center">Add Employee</h3>*/}
                             {this.getTitle()}
                             <div className="card-body">
                                 <form>
