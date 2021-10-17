@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const Employee_App_Base_Url = "http://localhost:8080/api/v1/employees";
+// const Employee_App_Base_Url = "http://localhost:8080/api/v1/employees";
+const Employee_App_Base_Url = "https://employee-management-app-sb.herokuapp.com/api/v1/employees";
 
 class EmployeeService {
     getEmployee() {
