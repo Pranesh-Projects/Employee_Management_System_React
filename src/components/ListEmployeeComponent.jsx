@@ -31,6 +31,7 @@ class ListEmployeeComponent extends Component {
     deleteEmployee(id) {
         console.log(id);
         this.setState({employees: this.state.employees.filter(employee => employee.id !== id)});
+        EmployeeService.deleteEmployee(id);
     }
 
     editEmployee(e, employee) {

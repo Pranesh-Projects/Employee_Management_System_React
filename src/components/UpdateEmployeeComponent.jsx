@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import EmployeeService from "../services/EmployeeService";
 
 class UpdateEmployeeComponent extends Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class UpdateEmployeeComponent extends Component {
             lastName: this.state.lastName,
             emailId: this.state.emailId,
         });
+        EmployeeService.updateEmployee(this.state,this.state.id);
         this.props.history.push("/employees");
     };
 
