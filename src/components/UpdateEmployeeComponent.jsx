@@ -38,12 +38,8 @@ class UpdateEmployeeComponent extends Component {
 
     updateEmployee = (e) => {
         e.preventDefault();
-        this.setState({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            emailId: this.state.emailId,
-        });
         EmployeeService.updateEmployee(this.state,this.state.id);
+        EmployeeService.getEmployee();
         this.props.history.push("/employees");
     };
 
